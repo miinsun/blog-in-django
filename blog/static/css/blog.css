@@ -1,14 +1,10 @@
 h1 a {
-    color: #FCA205;
+    color: #8977ad;
     font-family: 'Lobster';
 }
 
-body {
-    padding-left: 15px;
-}
-
 .page-header {
-    background-color: #ff9400;
+    background-color: #8977ad;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -56,4 +52,8 @@ h1, h2, h3, h4 {
 
 .comment {
     margin: 20px 0px 20px 20px;
+}
+
+.menu{
+    text-size-adjust: 20%;
 }
