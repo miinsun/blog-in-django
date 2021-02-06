@@ -2,17 +2,19 @@
 
 {% block content %}
     <div class="post">
-        {% if post.published_date %}
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-        {% else %}
-            <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
-        {% endif %}
-        {% if user.is_authenticated %}
-            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-            <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-        {% endif %}
+        <div class="date">
+            {{ post.created_date }}
+        </div>
+        {{ post.author}} 작성
+        {%ifequal post.author user %}
+            {% if user.is_authenticated %}
+                <div class="editbtn">
+                    <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                </div>
+            {% endif %}
+        {% endifequal%}
+        <br>
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
         <hr>
@@ -21,10 +23,9 @@
             <div class="comment">
                 <div class="date">
                     {{ comment.created_date }}
-                    {% if not comment.approved_comment %}
+                    {%ifequal comment.author user.username %}
                         <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-                        <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
-                    {% endif %}
+                    {% endifequal%}
                 </div>
                 <strong>{{ comment.author }}</strong>
                 <p>{{ comment.text|linebreaks }}</p>
