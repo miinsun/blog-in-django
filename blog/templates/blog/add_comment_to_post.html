@@ -1,11 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div class="clickpost">
     <h1>New comment</h1>
     <form method="POST" class="post-form">{% csrf_token %}
-        작성자: <input type="text" name="author" value="{{user.username}}" readonly><br>
+        <p>작성자: </p><input type="text" name="author" value="{{user.username}}" readonly><br>
         <br>
-        내용 입력: <input type="text" name="text" style="height:15%;">
+        <p>내용 입력: </p><input type="text" name="text" style="height:15%;">
         <button type="submit" class="save btn btn-default">Send</button>
     </form>
+    </div>
 {% endblock %}

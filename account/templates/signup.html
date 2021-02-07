@@ -1,24 +1,45 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    <div class="container">
-        <h1>sign up!</h1>
-        
-        <form action="{% url 'signup' %}" method="POST">
+    <div class="container"  style="text-align: center;">
+        <h1 >sign up!</h1>
+        <br>
+        <form action="{% url 'signup' %}" method="POST" style="display: inline-block;">
             {% csrf_token %}
-            Username:
-            <br>
-            <input type="text" name="username">
-            <br>
-            Password:
-            <br>
-            <input type="password" name="password1">
-            <br>
-            Confirm Password:
-            <br>
-            <input type="password" name="password2">
-            <br><br>
-            <input type="submit" class="btn btn-primary" value="sign up">
+            <table>
+            <tr>
+                <td>
+                    Username:
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="username">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password:
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <input type="password" name="password1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Confirm Password:
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <input type="password" name="password2">
+                </td>
+            </tr>
+            </table>
         </form>
+        <br>
+        <input type="submit" class="btn btn-primary" value="sign up">
     </div>
 {% endblock %}

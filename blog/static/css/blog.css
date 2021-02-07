@@ -1,18 +1,54 @@
+@font-face {
+    font-family: 'MapoGoldenPier';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoGoldenPierA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JSDongkang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JSDongkang-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-BoldA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p{
+    font-family: 'JSDongkang-Regular';
+    font-size: 130%;
+}
+
+hr{
+    height: 1.5px;
+    background-color: #364f6b80;
+}
+
+body{
+    background-color: #3fc1c9;
+}
+
 h1 a {
-    color: #8977ad;
-    font-family: 'Lobster';
+    color: #ffffff;
+    font-family: 'MapoGoldenPier';
 }
 
 .page-header {
-    background-color: #8977ad;
+    background-color: #364f6b;
     margin: auto 0;
     padding: 3% 10%;
+    border: none;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
-    text-decoration: none;
+    font-size: 180%;
+    font-family: 'JSDongkang-Bold';
 }
 
 .content {
@@ -21,7 +57,8 @@ h1 a {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'JSDongkang-Regular';
+    color: #fc5185;
 }
 
 .date {
@@ -39,12 +76,20 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 170%;
+    font-size: 150%;
     margin-right: 20px;
+    font-family: 'JSDongkang-Regular';
 }
 
 .post {
-    margin-bottom: 70px;
+    margin-bottom: 3%;
+    padding: 0% 10% 0% 10%;
+}
+
+.clickpost, .pdetail {
+    padding: 3% 10% 3% 10%;
+   
+    background-color: #f5f5f5;
 }
 
 .post h1 a, .post h1 a:visited {
@@ -52,7 +97,9 @@ h1, h2, h3, h4 {
 }
 
 .comment {
-    margin: 20px 0px 20px 20px;
+   margin: 2%;
+   padding: 3%;
+   background-color: #364f6b09;
 }
 
 .menu{
@@ -64,15 +111,71 @@ h1, h2, h3, h4 {
 }
 
 .totalcomment {
-    color: #8977ad; 
+    color: #364f6b; 
     padding: 1%;
 }
 
 .postcontent{
     font-size: 130%;
+    color: #364f6b;
+    font-family: 'JSDongkang-Regular';
 }
 
 .editbtn{
     display: inline;
     float: right;
+}
+
+.commentbtn{
+    text-align: center;
+}
+
+.ptitle{
+    font-size: 180%; 
+    font-family: 'JSDongkang-Bold';
+    color: #fc5185;
+    margin-top: 3%;
+    size: 40%;
+}
+
+.plusbtn{
+      padding: 1.5%;
+      float: right;
+      color: #fc5185; 
+      font-size: 300%;
+      background-color: #364f6b;
+      border-radius: 100%;
+      margin-bottom: 3%;
+      margin-right: 3%;
+  }
+
+.menutitle{
+    font-size: 3000%;
+    color: #3fc1c9;
+}
+
+.amsg{
+    display: inline-block;
+    text-align: center;
+    color: #f5f5f5;
+    font-family: 'JSDongkang-Regular';
+}
+
+.cauthor{
+    font-size: 100%; 
+    font-family: 'JSDongkang-Bold';
+    color: #fc5185;
+}
+
+.ctext{
+    font-size: 80%; 
+    font-family: 'JSDongkang-Regular';
+    color: #364f6b;
+    margin-left: 1%;
+}
+
+.btn {
+    size: 50%;
+    font-size: 10%;
+    padding: 3;
 }

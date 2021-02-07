@@ -2,10 +2,12 @@
 
 {% block content %}
     <div class="post">
+    <div class="pdetail">
         <div class="date">
             {{ post.created_date }}
+            <br>
+            {{ post.author}} 작성
         </div>
-        {{ post.author}} 작성
         {%ifequal post.author user %}
             {% if user.is_authenticated %}
                 <div class="editbtn">
@@ -15,8 +17,8 @@
             {% endif %}
         {% endifequal%}
         <br>
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <div class="ptitle">{{ post.title }}</div>
+        <p  class="postcontent">&nbsp;{{ post.text|linebreaksbr }}</p>
         <hr>
         {% for comment in post.comments.all %}
             {% if user.is_authenticated or comment.approved_comment %}
@@ -27,13 +29,16 @@
                         <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
                     {% endifequal%}
                 </div>
-                <strong>{{ comment.author }}</strong>
-                <p>{{ comment.text|linebreaks }}</p>
+                <div class="cauthor">{{ comment.author }}</div>
+                <div class="ctext">{{ comment.text|linebreaks }}</div>
             </div>
             {% endif %}
         {% empty %}
-            <p>No comments here yet :(</p>
+            <div class="date"> No comments here yet :(</div>
         {% endfor %}
-        <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+        <div class="commentbtn">
+            <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">댓글 작성</a>
+        </div>
+        </div>
     </div>
 {% endblock %}
