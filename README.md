@@ -1,5 +1,6 @@
 # blog-in-django
-python django를 활용한 웹 개발 Blog 만들기            
+python django를 활용한 웹 개발 Blog 만들기       
+(chrome 환경에 최적화 되었습니다.)            
 [바로가기 링크](http://minsun.pythonanywhere.com/) 
 
 ## 개발환경
